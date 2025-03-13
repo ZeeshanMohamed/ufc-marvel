@@ -111,6 +111,8 @@ body {
 .mobile-menu.show {
     opacity: 1;
     visibility: visible;
+    z-index: 1000;
+    margin-top: -30px;
 }
 
 /* Responsive */
@@ -338,6 +340,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .divider{
+        display: none;
+    }
     .match-container {
         flex-direction: column;
         align-items: center;
@@ -349,6 +355,7 @@ body {
         width: 90%; /* Makes it adjust to the screen width */
         max-width: 350px; /* Keeps it consistent with larger screens */
         padding: 15px;
+        padding-top: 0px;
         /* height: 10%; */
     }
 
@@ -381,7 +388,7 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-top: 70px;
     color: #636363;
 }
 
