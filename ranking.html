@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ufc-marvel/watch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 (Latest Version) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+        .ranking {
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 10%;
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        /* Full-width row for P4P */
+        .full-width {
+            width: 100%;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Two-column row */
+        .ranking-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        /* Individual ranking box */
+        .ranking-column {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        /* Headers */
+        .ranking-column h3,
+        .full-width h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #D20000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .champion {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .champion h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .champion p {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .champion img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 10px;
+        }
+
+        .ranking-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .ranking-list li {
+            font-size: 1.2rem;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ranking-list li span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Rank movement up/down */
+        .up {
+            color: green;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .down {
+            color: red;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .p4p{
+            height: 100%;
+            width: 100%;
+        }
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .ranking-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ranking-column {
+                width: 90%;
+                max-width: 100%;
+            }
+
+            .ranking-column h3 {
+                font-size: 1.3rem;
+            }
+
+            .champion h2 {
+                font-size: 1.8rem;
+            }
+
+            .ranking-list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links">
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="event.html">EVENTS</a></li>
+        <li><a href="watch.html">WATCH</a></li>
+    </ul>
+    <div class="logo"><img src="logo/marvel_x_ufc-removebg-preview.png" alt=""></div>
+    <ul class="nav-links">
+        <li><a href="ranking.html">RANKINGS</a></li>
+        <li><a href="athelete.html">ATHELETS</a></li>
+        <li><a href="news.html">NEWS</a></li>
+    </ul>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="main.html">HOME</a>
+    <a href="event.html">EVENTS</a>
+    <a href="watch.html">WATCH</a>
+    <a href="ranking.html">RANKINGS</a>
+    <a href="athelete.html">ATHELETS</a>
+    <a href="news.html">NEWS</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("show");
+    }
+
+    window.addEventListener("scroll", function () {
+        let navbar = document.querySelector(".navbar");
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+
+</script>
+
+
+<!-- P4P Full Row -->
+<section class="ranking">
+    <div class=" full-width">
+        <h3>Pound for Pound<br><span>TOP 10</span></h3>
+        <div class="champion">
+            <h2>1 WOLVERINE</h2>
+            <img class="p4p" src="rankings/wolvwrine-removebg-preview.png" alt="Wolverine">
+        </div>
+        <ul class="ranking-list">
+            <li><span>2</span> Thor</li>
+            <li><span>3</span> Shang Chi</li>
+            <li><span>4</span> Hulk</li>
+            <li><span>5</span> Black Widow</li>
+            <li><span>6</span> Daredevil</li>
+            <li><span>7</span> Punisher</li>
+            <li><span>8</span>Apocalypse </li>
+            <li><span>9</span>Beast </li>
+            <li><span>10</span> X 23</li>
+        </ul>
+    </div>
+
+    <!-- 2nd Row: Two Columns -->
+    <div class="ranking-row">
+        <div class="ranking-column">
+            <h3>Flyweight Champion</h3>
+            <div class="champion">
+                <h2>NATASHA ROMANOFF</h2>
+                <p>CHAMPION</p>
+                <img src="rankings/natasha-removebg-preview.png" alt="Natasha Romanoff">
+            </div>
+            <ul class="ranking-list">
+                <li><span>1</span> Laura Kinley</li>
+                <li><span>2</span> Mystique</li>
+                <li><span>3</span> Black Cat </li>
+                <li><span>4</span> Gamora</li>
+                <li><span>5</span> Psylocke</li>
+                <li><span>6</span> Elektra</li>
+                <li><span>7</span> Rogue</li>
+                <li><span>8</span> Storm</li>
+                <li><span>8</span> Storm</li>
+                <li><span>8</span> Storm</li>
+            </ul>
+        </div>
+
+        <div class="ranking-column">
+            <h3>Lightweight Champion</h3>
+            <div class="champion">
+                <h2>SHNAG CHI</h2>
+                <p>CHAMPION</p>
+                <img src="rankings/shanchi-removebg-preview.png" alt="Spider-Man">
+            </div>
+            <ul class="ranking-list">
+                <li><span>1</span> Peter Parker </li>
+                <li><span>2</span> Karnak </li>
+                <li><span>3</span> Carnage</li>
+                <li><span>4</span> Gambit</li>
+                <li><span>5</span> Nightcrawler</li>
+                <li><span>6</span> Bullseye</li>
+                <li><span>7</span> Bucky</li>
+                <li><span>8</span> Steve Rogers</li>
+                <li><span>8</span> Steve Rogers</li>
+                <li><span>8</span> Steve Rogers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3rd Row: Two Columns -->
+    <div class="ranking-row">
+        <div class="ranking-column">
+            <h3>Middleweight Champion</h3>
+            <div class="champion">
+                <h2>JAMES HOWLETT</h2>
+                <p>CHAMPION</p>
+                <img src="rankings/wolvwrine-removebg-preview.png" alt="Captain America">
+            </div>
+            <ul class="ranking-list">
+                <li><span>1</span> Matt Murdock</li>
+                <li><span>2</span> Frank Castle</li>
+                <li><span>3</span> T’Challa</li>
+                <li><span>4</span> Eddie Brock </li>
+                <li><span>5</span> Hawkeye</li>
+                <li><span>6</span> Eric Brooks</li>
+                <li><span>7</span> Wade Wilson </li>
+                <li><span>8</span> Steve Rogers</li>
+                <li><span>9</span> Marc Spector</li>
+                <li><span>9</span> Marc Spector</li>
+            </ul>
+        </div>
+
+        <div class="ranking-column">
+            <h3>Heavyweight Champion</h3>
+            <div class="champion">
+                <h2>THOR ODINSON</h2>
+                <p>CHAMPION</p>
+                <img src="rankings/thor-removebg-preview.png" alt="Iron Man">
+            </div>
+            <ul class="ranking-list">
+                <li><span>1</span> Hank McKoy </li>
+                <li><span>2</span> Colossus</li>
+                <li><span>3</span> Ares</li>
+                <li><span>4</span> Bishop</li>
+                <li><span>5</span> Wilson Fisk</li>
+                <li><span>6</span> Drax</li>
+                <li><span>7</span> Kraven </li>
+                <li><span>8</span> Victor Creed</li>
+            </ul>
+        </div>
+
+        <div class="ranking-column">
+            <h3 style="font-size: 22px;">Super Heavyweight Champion</h3>
+            <div class="champion">
+                <h2>HULK</h2>
+                <p>CHAMPION</p>
+                <img src="rankings/hulk-111-removebg-preview.png" alt="Iron Man">
+            </div>
+            <ul class="ranking-list">
+                <li><span>1</span> Apocalypse </li>
+                <li><span>2</span> Red Hulk</li>
+                <li><span>3</span> Ben Grimm</li>
+                <li><span>4</span> Juggernaut</li>
+                <li><span>5</span> Blob</li>
+                <li><span>6</span> Black Dwarf</li>
+                <li><span>7</span> Rhino</li>
+                <li><span>8</span> Volstagg </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo/marvel_x_ufc-removebg-preview.png" alt="">
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Fight Club</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2024 UFC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+<body>
+
+</body>
+
+</html>

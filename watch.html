@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ufc-marvel/watch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 (Latest Version) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+        
+        body {
+            font-family: 'oswald';
+            width: 100%;
+        }
+
+        .watch-section {
+            background: url(watch/watch-main.jpg) center repeat;
+            height: 700px;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 70px;
+
+        }
+
+
+        .watch-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .watch-container h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 200px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+
+        }
+
+        .watch-container h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+            margin-top: 10px;
+        }
+
+        .watch-container p {
+            font-size: 1rem;
+            margin-top: 10px;
+            text-shadow: 2px 2px 8px rgb(255, 255, 255, 0.9);
+            color: #000000;
+        }
+
+        .watch-buttons {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+            margin-top: 20px;
+        }
+
+        .subscribe-btn,
+        .login-btn {
+            padding: 12px 20px;
+            font-size: 1rem;
+            /* font-weight: bold; */
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .subscribe-btn {
+            font-family: 'oswald';
+            padding: 10px 35px;
+            border: 1px solid black;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            /* font-weight: bold; */
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            background-color: #d1a02d;
+            color: black;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #b88923;
+        }
+
+
+        .subscribe-btn:hover::after {
+            width: 100%;
+        }
+
+        .login-btn {
+            font-family: 'oswald';
+            background-color: white;
+            color: black;
+            padding: 10px 35px;
+            border: 1px solid black;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            /* font-weight: bold; */
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            background-color: #ddd;
+        }
+
+        .login-btn:hover::after {
+            width: 100%;
+        }
+
+
+
+        .subscribe-btn::after,
+        .login-btn::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: red;
+            transition: width 0.3s ease-in-out;
+        }
+
+
+        /* Feature Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 50px 10%;
+            flex-wrap: wrap;
+
+        }
+
+        /* Feature Card Styles */
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        /* Different Sizes */
+        .feature-card.large {
+            width: 40%;
+        }
+
+
+        .feature-card.medium {
+            width: 30%;
+        }
+
+        .feature-card.small {
+            width: 20%;
+        }
+
+        /* Image on Top */
+        .large img {
+            width: 450px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .medium img {
+            width: 400px;
+            height: 400px;
+
+        }
+
+        .small img {
+            width: 220px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* Card Content */
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #172D12;
+            margin: 10px 0;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #333;
+            opacity: 0.8;
+        }
+
+        /* Watch Now Label */
+        .watch-now {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #D1B000;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        /* Hover Effects */
+        .feature-card:hover {
+            transform: scale(1.05);
+
+        }
+
+        
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center the cards */
+        padding: 20px; /* Adjust padding for small screens */
+    }
+
+    .feature-card {
+        width: 90% !important; /* Make all cards take up most of the width */
+        max-width: 400px; /* Prevent cards from being too large */
+        margin-bottom: 20px; /* Add spacing between stacked cards */
+    }
+
+    .feature-card img {
+        width: 100% !important; /* Ensure images are responsive */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem; /* Slightly reduce heading size */
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="main.html">HOME</a></li>
+            <li><a href="event.html">EVENTS</a></li>
+            <li><a href="watch.html">WATCH</a></li>
+        </ul>
+        <div class="logo"><img src="/logo/marvel_x_ufc-removebg-preview.png" alt=""></div>
+        <ul class="nav-links">
+            <li><a href="ranking.html">RANKINGS</a></li>
+            <li><a href="athelete.html">ATHELETS</a></li>
+            <li><a href="news.html">NEWS</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="main.html">HOME</a>
+        <a href="event.html">EVENTS</a>
+        <a href="watch.html">WATCH</a>
+        <a href="ranking.html">RANKINGS</a>
+        <a href="athelete.html">ATHELETS</a>
+        <a href="news.html">NEWS</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("show");
+        }
+
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+
+    </script>
+
+
+
+    <section class="watch-section">
+        <div class="watch-container">
+            <h1>UFC FIGHT PASS</h1>
+            <h2>EXPERIENCE COMBAT SPORTS LIKE NEVER BEFORE</h2>
+            <p>Enjoy exclusive live events, original programming, and access to the world's largest combat sports
+                library.</p>
+            <div class="watch-buttons">
+                <button class="subscribe-btn">SUBSCRIBE TODAY</button>
+                <button class="login-btn">LOG IN</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card large">
+            <img src="watch/fightpass.jpg" alt="Combat Sports">
+            <div class="card-content">
+                <span class="watch-now">WATCH NOW</span>
+                <h3>BEST OF UFC FIGHT PASS</h3>
+                <p>Relive some of the greatest combat sports moments of all time on UFC FIGHT PASS.</p>
+            </div>
+        </div>
+
+        <div class="feature-card medium">
+            <img src="watch/pressconference.jpg" alt="Live Events">
+            <div class="card-content">
+                <span class="watch-now">WATCH NOW</span>
+                <h3>LIVE EVENTS & ORIGINALS</h3>
+                <p>Get exclusive access to live fights, behind-the-scenes content, and interviews with fighters.</p>
+            </div>
+        </div>
+
+        <div class="feature-card small">
+            <img src="watch/womenchamp.jpg" alt="Watch Anywhere">
+            <div class="card-content">
+                <span class="watch-now">WATCH NOW</span>
+                <h3>WATCH ANYWHERE, ANYTIME</h3>
+                <p>Stream on multiple devices including smartphones, tablets, and smart TVs.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="logo/marvel_x_ufc-removebg-preview.png" alt="">
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Explore</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Fight Club</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h3>Follow Us</h3>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2024 UFC. All Rights Reserved.</p>
+        </div>
+      </footer>
+
+
+
+</body>
+
+</html>

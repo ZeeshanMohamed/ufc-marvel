@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFC X MARVEL</title>
+    <link href="https://fonts.cdnfonts.com/css/ufc" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 (Latest Version) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="main.html">HOME</a></li>
+            <li><a href="event.html">EVENTS</a></li>
+            <li><a href="watch.html">WATCH</a></li>
+        </ul>
+        <div class="logo"><img src="logo/marvel_x_ufc-removebg-preview.png" alt=""></div>
+        <ul class="nav-links">
+            <li><a href="ranking.html">RANKINGS</a></li>
+            <li><a href="athelete.html">ATHELETS</a></li>
+            <li><a href="news.html">NEWS</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="main.html">HOME</a>
+        <a href="event.html">EVENTS</a>
+        <a href="watch.html">WATCH</a>
+        <a href="ranking.html">RANKINGS</a>
+        <a href="athelete.html">ATHELETS</a>
+        <a href="news.html">NEWS</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("show");
+        }
+
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+
+    </script>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p style="font-size: 20px;"><strong>UFC FIGHT NIGHT "HULK VS RED HULK" </strong></p>
+            <h1 class="hero-title"><span>UFC</span> <span>X</span> <span>MARVEL</span></h1>
+            <p><strong>Retrace The Ascent Of The One And Only "Multiverse Dream" </strong></p>
+            <a href="#" class="btn-glow">Join the Fight</a>
+        </div>
+    </section>
+
+    <section class="sec-2">
+        <div class="match-container">
+            <div class="match-card">
+                <p>LUKE-CAGE VS MAGNUS <br> <a style="font-size: 14px;">UFC 213</a>
+                </p>
+                <img src="heropage/lukecage-removebg-preview.png" alt="">
+                <img src="heropage/magnius-removebg-preview.png" alt="">
+            </div>
+            <div class="divider"></div>
+            <div class="match-card">
+                <img src="heropage/ediie-removebg-preview.png" alt="">
+                <img src="heropage/frank-removebg-preview.png" alt="">
+                <p>EDDIE VS FRANK</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="trending-section">
+        <h2>NOW TRENDING</h2>
+        <div class="trending-grid">
+    
+            <!-- Large News Card -->
+            <div class="trending-card news-card large">
+                <img src="heropage/whatsno/legends.jpg" alt="UFC x Marvel Superfight">
+                <div class="content">
+                    <h3>UFC's greatest warriors immortalized!</h3>
+                    <p>Legends never fade, only rise stronger!</p>
+                    <a href="#">Read More ➝</a>
+                </div>
+            </div>
+    
+            <!-- Medium Event Card -->
+            <div class="trending-card event-card medium">
+                <img src="heropage/whatsno/ufc-main.jpg" alt="Wolverine vs Punisher">
+                <div class="content">
+                    <h3>No powers, just fists—only the strongest survive!</h3>
+                    <p>A clash of pure power and brutal tactics. Witness history in the making.</p>
+                    <a href="#">View Event ➝</a>
+                </div>
+            </div>
+    
+            <!-- Small Buy Tickets Card -->
+            <div class="trending-card ticket-card medium">
+                <img src="heropage/whatsno/ufc87.jpg" alt="Buy UFC Tickets">
+                <div class="content">
+                    <h3>Limited Tickets Available</h3>
+                    <p>Secure your seats for the most intense UFC event ever.</p>
+                    <a href="#">Buy Now ➝</a>
+                </div>
+            </div>
+    
+            <!-- Medium Fighter Spotlight -->
+            <div class="trending-card fighter-card medium-large">
+                <img src="heropage/whatsno/new-octagon.jpg" alt="Luke Cage UFC">
+                <div class="content">
+                    <h3>Spotlight: New Octagon</h3>
+                    <p>For the Super Heavyweight fights we will need some updates on the octagon and referees</p>
+                    <a href="#">Read Now ➝</a>
+                </div>
+            </div>
+    
+            <!-- Small Fan Reactions -->
+            <div class="trending-card fan-card medium">
+                <img src="heropage/whatsno/post-fight-reaction.jpg" alt="UFC Fan Reactions">
+                <div class="content">
+                    <h3>Post Fight Reactions</h3>
+                    <p>"This is the fight of a lifetime!" - UFC Enthusiast</p>
+                    <a href="#">Join the Hype ➝</a>
+                </div>
+            </div>
+    
+            <!-- Large Exclusive Interview -->
+            <div class="trending-card interview-card large">
+                <img src="heropage/whatsno/interm-cahmpion.jpg" alt="Tony Stark UFC">
+                <div class="content">
+                    <h3>Super Heavyweight Interm Champion</h3>
+                    <p>Time to move forward and discover who is the Absolute Super Heavyweight Champion!!
+                        Once finish the arc we will have all the absolute champions clarified.</p>
+                    <a href="#">Watch Now ➝</a>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="logo/marvel_x_ufc-removebg-preview.png" alt="">
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Explore</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Fight Club</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h3>Follow Us</h3>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2024 UFC. All Rights Reserved.</p>
+        </div>
+      </footer>
+      
+    
+</body>
+
+</html>

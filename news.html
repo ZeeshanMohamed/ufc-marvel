@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ufc-marvel/watch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 (Latest Version) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 30px 0;
+    color: #222;
+}
+
+/* News Container */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+/* Different Sized Cards */
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Card Sizes */
+.large { grid-column: span 2; height: 600px; }
+.medium { height: 600px; }
+.small { height: 500px; }
+.tall { height: 450px; }
+.tall-width{ width: 100%; height: 450px;}
+
+/* News Image */
+.news-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* News Content */
+.news-content {
+    padding: 15px;
+}
+
+.news-content h3 {
+    font-size: 1.4rem;
+    color: #222;
+}
+
+.news-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    color: #fff;
+    background: #007bff;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+/* Hover Effects */
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .news-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .large, .tall { grid-column: span 1; height: auto; }
+}
+
+    </style>
+</head>
+<nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links">
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="event.html">EVENTS</a></li>
+        <li><a href="watch.html">WATCH</a></li>
+    </ul>
+    <div class="logo"><img src="logo/marvel_x_ufc-removebg-preview.png" alt=""></div>
+    <ul class="nav-links">
+        <li><a href="ranking.html">RANKINGS</a></li>
+        <li><a href="athelete.html">ATHELETS</a></li>
+        <li><a href="news.html">NEWS</a></li>
+    </ul>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="main.html">HOME</a>
+    <a href="event.html">EVENTS</a>
+    <a href="watch.html">WATCH</a>
+    <a href="ranking.html">RANKINGS</a>
+    <a href="athelete.html">ATHELETS</a>
+    <a href="news.html">NEWS</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("show");
+    }
+
+    window.addEventListener("scroll", function () {
+        let navbar = document.querySelector(".navbar");
+
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+
+</script>
+
+<section class="news-section">
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-container">
+        <div class="news-card large">
+            <img src="New folder/1.jpg" alt="News 1">
+            <div class="news-content">
+                <h3>Major Headline 1</h3>
+                <p>Breaking news and important updates from around the world.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card medium">
+            <img src="New folder/2.jpg" alt="News 2">
+            <div class="news-content">
+                <h3>Tech Update</h3>
+                <p>New innovations and trends in the technology sector.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card small">
+            <img src="New folder/3.jpg" alt="News 3">
+            <div class="news-content">
+                <h3>Sports Highlight</h3>
+                <p>Latest match updates and sports events worldwide.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card tall-width">
+            <img src="New folder/8.jpg" alt="News 8">
+            <div class="news-content">
+                <h3>World Politics</h3>
+                <p>Insights on global events and political affairs.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card tall">
+            <img src="New folder/4.jpg" alt="News 4">
+            <div class="news-content">
+                <h3>Business Growth</h3>
+                <p>Stock market trends and business insights.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card medium">
+            <img src="New folder/5.jpg" alt="News 5">
+            <div class="news-content">
+                <h3>Science & Space</h3>
+                <p>Discoveries and space missions that change our future.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card large">
+            <img src="New folder/6.jpg" alt="News 6">
+            <div class="news-content">
+                <h3>Health & Wellness</h3>
+                <p>Fitness and medical breakthroughs for life.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-card small">
+            <img src="New folder/7.jpg" alt="News 7">
+            <div class="news-content">
+                <h3>Entertainment Buzz</h3>
+                <p>Latest celebrity news and movie updates.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo/marvel_x_ufc-removebg-preview.png" alt="">
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Fight Club</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2024 UFC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+<body>
+
+</body>
+
+</html>
